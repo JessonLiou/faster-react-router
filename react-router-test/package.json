@@ -1,0 +1,42 @@
+{
+  "name": "react-15-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.dev.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "@loadable/component": "^5.15.3",
+    "antd": "4.7.3",
+    "babel-loader": "^8.0.5",
+    "fast-react-router": "file:../packages/fast-react-router",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "loadable": "^1.0.0",
+    "portfinder": "^1.0.32",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-draggable": "^4.4.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "0.5.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "style-loader": "^2.0.0"
+  }
+}

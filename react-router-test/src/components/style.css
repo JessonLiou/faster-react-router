@@ -1,0 +1,11 @@
+.navigation-btn {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.navigation-btn.active {
+    background: rgb(84, 131, 241);
+    color: white;
+}
