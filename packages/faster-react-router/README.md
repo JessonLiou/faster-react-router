@@ -1,4 +1,4 @@
-# fast-react-router@0.x
+# faster-react-router@0.x
 
 > Small router, support nest routes and high performance route match.
 
@@ -6,12 +6,12 @@
 
 Using [npm](https://www.npmjs.com/):
 
-    $ npm install --save fast-react-router
+    $ npm install --save faster-react-router
 
 ## Basic Usage
 ```js
 /// router.js
-import { Router } from 'fast-react-router';
+import { Router } from 'faster-react-router';
 
 const routes = [
     {
@@ -66,7 +66,7 @@ export default router;
 ```js
 import React from "react";
 
-import { RouterView } from 'fast-react-router';
+import { RouterView } from 'faster-react-router';
 import router from "./router";
 import { Button } from "antd";
 

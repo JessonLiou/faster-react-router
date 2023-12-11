@@ -1,5 +1,5 @@
 {
-  "name": "fast-react-router-packages",
+  "name": "faster-react-router-packages",
   "private": true,
   "scripts": {
     "build": "node ./scripts/build.js",

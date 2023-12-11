@@ -1,6 +1,6 @@
 import React from "react";
 
-import { RouterView } from 'fast-react-router';
+import { RouterView } from 'faster-react-router';
 import router from "./router";
 import { Button } from "antd";
 

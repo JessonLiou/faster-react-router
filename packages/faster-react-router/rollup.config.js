@@ -90,7 +90,7 @@ const umd = [
       sourcemapPathTransform: relativePath =>
         relativePath.replace(/^.*?\/node_modules/, "../../node_modules"),
       format: "umd",
-      name: "FastReactRouter",
+      name: "FasterReactRouter",
       globals
     },
     external: Object.keys(globals),
@@ -126,7 +126,7 @@ const umd = [
       sourcemapPathTransform: relativePath =>
         relativePath.replace(/^.*?\/node_modules/, "../../node_modules"),
       format: "umd",
-      name: "FastReactRouter",
+      name: "FasterReactRouter",
       globals
     },
     external: Object.keys(globals),

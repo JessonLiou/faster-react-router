@@ -19,7 +19,7 @@
     "@loadable/component": "^5.15.3",
     "antd": "4.7.3",
     "babel-loader": "^8.0.5",
-    "fast-react-router": "file:../packages/fast-react-router",
+    "faster-react-router": "file:../packages/faster-react-router",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "loadable": "^1.0.0",

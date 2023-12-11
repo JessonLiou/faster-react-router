@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "antd";
-import { RouterView } from 'fast-react-router';
+import { RouterView } from 'faster-react-router';
 import router from '../../router';
 
 class Child1 extends React.PureComponent {

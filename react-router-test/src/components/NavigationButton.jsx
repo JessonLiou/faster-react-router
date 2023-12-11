@@ -1,7 +1,7 @@
 import React from 'react';
 import router from '../router';
 
-import { useLocation } from 'fast-react-router';
+import { useLocation } from 'faster-react-router';
 import './style.css';
 
 export const NavigationButton = (props) => {

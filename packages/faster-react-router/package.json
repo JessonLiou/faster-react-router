@@ -1,12 +1,12 @@
 {
-  "name": "fast-react-router",
+  "name": "faster-react-router",
   "version": "0.0.1",
-  "description": "Fast react router",
-  "homepage": "https://github.com/JessonLiou/fast-react-router",
+  "description": "Faster react router",
+  "homepage": "https://github.com/JessonLiou/faster-react-router",
   "repository": {
-    "url": "https://github.com/JessonLiou/fast-react-router.git",
+    "url": "https://github.com/JessonLiou/faster-react-router.git",
     "type": "git",
-    "directory": "packages/fast-react-router"
+    "directory": "packages/faster-react-router"
   },
   "license": "MIT",
   "author": "Jesson Liu <lioujiasheng@outlook.com>",
@@ -22,7 +22,7 @@
     "umd"
   ],
   "main": "index.js",
-  "module": "esm/fast-react-router.js",
+  "module": "esm/faster-react-router.js",
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c",

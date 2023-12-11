@@ -1,5 +1,5 @@
 import routes from "./routes";
-import { Router } from 'fast-react-router';
+import { Router } from 'faster-react-router';
 
 const router = new Router({
     routes,
