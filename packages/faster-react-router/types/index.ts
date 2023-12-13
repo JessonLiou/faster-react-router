@@ -48,12 +48,21 @@ export interface RouterOptions {
   mode?: HistoryType,
   routes?: UserConfigRoute[],
   history?: any,
+  fallback?: string | FallbackRoute,
 }
 
 export interface CommonRoute {
   path: string,
   name?: string,
   redirect?: string,
+  [key: string]: any
+}
+
+export interface FallbackRoute {
+  name?: string,
+  redirect?: string,
+  component?: ReactAllComponentType,
+  meta?: RouteMeta,
   [key: string]: any
 }
 
@@ -98,3 +107,7 @@ export interface RouteAfterGuardFn {
 }
 
 export type RouterViewRenderFn = (route: UserConfigRoute | null) => ReactAllComponentType;
+
+export interface RouterParserOptions {
+  fallback?: string | FallbackRoute,
+}

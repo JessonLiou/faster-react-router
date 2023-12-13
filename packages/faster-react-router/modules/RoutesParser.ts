@@ -1,11 +1,18 @@
-import { MatchedRoute, UserConfigRoute } from "../types";
+import { FallbackRoute, MatchedRoute, RouterParserOptions, UserConfigRoute } from "../types";
 
 const URL_SEPARATOR = '/';
 
 export class RoutesParser {
     pathMap: {[name: string]: UserConfigRoute} = {};
+    fallback?: FallbackRoute | string;
 
-    constructor(routes: UserConfigRoute[]) {
+    constructor(routes: UserConfigRoute[], options: RouterParserOptions) {
+        const finalOptions: RouterParserOptions = options || {};
+
+        if (finalOptions.fallback) {
+            this.fallback = finalOptions.fallback;
+        }
+
         this.parse(routes);
     }
 
@@ -23,7 +30,17 @@ export class RoutesParser {
             if (route.children && route.children.length) {
                 this.parse(route.children);
             }
-        })
+        });
+    }
+
+    getFallbackRoute = () => {
+        if (!this.fallback) return null;
+
+        const fallbackRoute = typeof this.fallback === 'string' ? {
+            redirect: this.fallback
+        } : this.fallback;
+
+        return fallbackRoute;
     }
 
     getRouteByPath = (path: string) => {
@@ -63,6 +80,18 @@ export class RoutesParser {
                 component: parent.component,
                 meta: parent.meta || {}
             });
+        }
+
+        if (!result.length) {
+            const fallbackRoute: FallbackRoute | null = this.getFallbackRoute();
+
+            if (fallbackRoute) {
+                result.push({
+                    path,
+                    component: fallbackRoute.component,
+                    meta: fallbackRoute.meta || {},
+                });
+            }
         }
 
         return result;

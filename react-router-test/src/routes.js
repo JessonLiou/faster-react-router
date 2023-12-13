@@ -1,7 +1,6 @@
 import loadable from '@loadable/component';
 import Page2 from './pages/Page2';
-
-console.log(Page2);
+import NotFound from './pages/NotFound';
 
 const routes = [
     {
@@ -42,6 +41,13 @@ const routes = [
     {
         path: '/page2',
         component: Page2,
+        meta: {
+            id: 2
+        }
+    },
+    {
+        path: '/404',
+        component: NotFound,
         meta: {
             id: 2
         }

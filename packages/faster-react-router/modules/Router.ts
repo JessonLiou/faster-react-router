@@ -1,4 +1,4 @@
-import { HistoryType, Location, MatchedRoute, Route, RouteAfterGuardFn, RouteBeforeGuardFn, RouterMoreOptions, RouterOptions, UserConfigRoute } from "../types/index";
+import { FallbackRoute, HistoryType, Location, MatchedRoute, Route, RouteAfterGuardFn, RouteBeforeGuardFn, RouterMoreOptions, RouterOptions, UserConfigRoute } from "../types/index";
 import { createBrowserHistory, createHashHistory } from "history";
 import { RoutesParser } from "./RoutesParser";
 
@@ -42,7 +42,9 @@ class Router {
         let { name, mode } = options;
         if (name != null) this.name = name;
         if (mode != null) this.mode = mode;
-        this.routesParser = new RoutesParser(options.routes || []);
+        this.routesParser = new RoutesParser(options.routes || [], {
+            fallback: options.fallback,
+        });
 
         // Step 2: create history by mode.
         if (!options.history) {
@@ -62,12 +64,16 @@ class Router {
     }
 
     tryToRedirect = () => {
-        const route: UserConfigRoute | null = this.routesParser.getRouteByPath(this.history.location.pathname);
+        let route: FallbackRoute | UserConfigRoute | null = this.routesParser.getRouteByPath(this.history.location.pathname);
 
-        if (route && route.redirect) {
-            this.history.replace(route.redirect);
+        if (!route) route = this.routesParser.getFallbackRoute();
 
-            return true;
+        if (route) {
+            if (route.redirect) {
+                this.history.replace(route.redirect);
+
+                return true;
+            }
         }
 
         return false;
