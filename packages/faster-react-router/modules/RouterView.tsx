@@ -49,7 +49,7 @@ class RouterView extends React.Component<RouterViewProps, RouterViewState> {
 
         let parent = this._reactInternalFiber ? this._reactInternalFiber.return : this.__v.__;
         while (parent) {
-            if (parent.stateNode?._routerViewFlag || parent.__c) depth++;
+            if ((parent.stateNode || parent.__c)?._routerViewFlag) depth++;
 
             parent = parent.return || parent.__;
         }
