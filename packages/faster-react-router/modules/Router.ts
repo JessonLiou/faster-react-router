@@ -102,9 +102,9 @@ class Router {
         });
 
         const route: Route = {
-          pathname: location.pathname,
-          search: location.search,
-          matched: topMatchedRoute,
+            pathname: location.pathname,
+            search: location.search,
+            matched: topMatchedRoute,
         }
 
         return route;
