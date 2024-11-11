@@ -47,7 +47,8 @@ class RouterView extends React.Component<RouterViewProps, RouterViewState> {
         // handle nested routes
         let depth = 0;
 
-        let parent = this._reactInternalFiber ? this._reactInternalFiber.return : this.__v.__;
+        const reactNode = this._reactInternals || this._reactInternalFiber;
+        let parent = reactNode ? reactNode.return : this.__v.__;
         while (parent) {
             if ((parent.stateNode || parent.__c)?._routerViewFlag) depth++;
 
